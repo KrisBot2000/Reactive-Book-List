@@ -1,3 +1,5 @@
+let id = 4;
+
 const booksFromFakeDB = [{
     _id : 1,
     title : 'Talion: The Revenant from DB',
@@ -21,7 +23,8 @@ export const getBooksFromFakeXHR = () => new Promise((resolve, reject) => {
 
 export const addBookToFakeXHR = (book) => new Promise((resolve, reject) => {
   setTimeout(() => {
-    book._id = Math.random();
+    book._id = id;
+    id++;
     booksFromFakeDB.push(book);
     resolve(booksFromFakeDB);
   }, 500);
